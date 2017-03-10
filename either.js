@@ -11,10 +11,10 @@ const Left = x =>
     fold: (f, g) => f(x),
     inspect: () => `Left(${x})`
   })
-const findColor = name => {
-  const found = ({red: '#red', blue: '#blue', yellow: '#yellow'})[name]
-  return found ? Right(found) : Left(null)
-}
+const fromNullable = x =>
+  x != null ? Right(x) : Left(null)
+const findColor = name =>
+  fromNullable({red: '#red', blue: '#blue', yellow: '#yellow'}[name])
 const findGreen = findColor.bind(null, 'green')
 const findRed = findColor.bind(null, 'red')
 const end = v => v
