@@ -20,7 +20,7 @@ const findRed = findColor.bind(null, 'red')
 const end = v => v
   .map(c => c.slice(1))
   .fold(e => 'no color',
-    c => c.toUpperCase()
+        c => c.toUpperCase()
   )
 log(end(findGreen()), end(findRed()))
 
